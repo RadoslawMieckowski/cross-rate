@@ -27,6 +27,8 @@ public class ScenarioSelection extends JFrame {
     private JComboBox<String> combo1;
     private JComboBox<String> combo2;
     private JComboBox<String> combo3;
+    private final int FRAME_WIDTH=500;
+    private final int FRAME_HEIGHT=450;
     private static String baseCurrency;
     private static String quoteCurrency;
     private static String transitionCurrency;
@@ -78,7 +80,11 @@ public class ScenarioSelection extends JFrame {
         setTitle("Cross-rate");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
-        setBounds(400, 100, 600, 500);
+        Toolkit kit= Toolkit.getDefaultToolkit();
+        Dimension screenSize=kit.getScreenSize();
+        int screenWidth=screenSize.width;
+        int screenHeight=screenSize.height;
+        setBounds(screenWidth/2-FRAME_WIDTH/2, screenHeight/2-FRAME_HEIGHT/2, FRAME_WIDTH, FRAME_HEIGHT);
 
         title = new JLabel("Crosss-rate", SwingConstants.CENTER);
         font = new Font("SansSerif", Font.BOLD + Font.ITALIC, 16);
